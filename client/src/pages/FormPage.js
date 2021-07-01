@@ -6,18 +6,15 @@ import {
   Col,
   Row,
   Card,
-  CardBody,
   Alert,
   Button,
   Modal,
   ModalBody,
-  ModalHeader,
 } from "reactstrap";
 import { useState } from "react";
 import { DropdownSelect } from "../components/DropDownItems";
 import { isEmpty } from "lodash";
 import InputFields from "../components/InputFields.js";
-import FormButtons from "../components/FormButtons.js";
 import Header from "../components/Header.js";
 
 const FormPage = () => {
@@ -91,32 +88,25 @@ const FormPage = () => {
     );
   };
   const getFirstName = (value) => {
-    console.log(value);
     setFirstName(value);
   };
   const getMiddleName = (value) => {
-    console.log(value);
     setMiddleName(value);
   };
   const getLastName = (value) => {
-    console.log(value);
     setLastName(value);
   };
   const getPhone = (value) => {
-    console.log(value);
     setPhone(value);
   };
   const getCountry = (value) => {
-    console.log(value);
     setCountry(value);
   };
   const getLoan = (value) => {
-    console.log(value);
     setLoan(value);
   };
 
   const getGender = (label) => {
-    console.log(label);
     setGender(label);
   };
 

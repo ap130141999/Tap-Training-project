@@ -83,19 +83,19 @@ const insertData = async (req, res) => {
   } = req.body;
   const collection = client.db("customer_details").collection("form_details");
   const data = {
-    firstName: firstName,
-    lastName: lastName,
-    middleName: middleName,
-    phone: phone,
-    country: country,
-    loan: loan,
-    gender: gender,
-    marital: marital,
-    education: education,
-    employment: employment,
-    loanType: loanType,
-    account: account,
-    aadhar: aadhar,
+    firstName,
+    lastName,
+    middleName,
+    phone,
+    country,
+    loan,
+    gender,
+    marital,
+    education,
+    employment,
+    loanType,
+    account,
+    aadhar,
   };
 
   const response = await collection.insertOne(data);
