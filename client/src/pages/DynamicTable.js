@@ -1,9 +1,9 @@
 import axios from "axios";
-import { Table, Button, Container, Card } from "reactstrap";
+import { Table, Button, Container, Card, Alert } from "reactstrap";
 import { useEffect, useState } from "react";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import { faEdit , faTrash} from "@fortawesome/free-solid-svg-icons";
 
 import EnumModal from "../components/Modals.js";
 import Header from "../components/Header.js";
@@ -19,6 +19,8 @@ const DynamicTable = (props) => {
   const [tableId, setTabelId] = useState("");
   const [value, setValue] = useState([]);
   const [closeModal, setCloseModal] = useState();
+  const [message, setMessage] = useState("");
+  const [show, setShow] = useState(false);
 
   const AddModal = (enumId, value) => {
     setTabelId(enumId);
@@ -37,6 +39,19 @@ const DynamicTable = (props) => {
     console.log(response.data);
   };
 
+  const deleteValues = async(enumId) => {
+    const response = await dele(enumId);
+    //  window.location.reload()
+    setMessage(response.data.message);
+    setShow(true);
+    setTimeout(() => {
+   window.location.reload()
+}, 2000);
+    
+  }
+   const dele = async (enumId) =>
+      await axios.delete(`http://localhost:3001/enum/delete/${enumId}`, {
+      });
   return (
     <>
       <Header />
@@ -58,6 +73,9 @@ const DynamicTable = (props) => {
         style={{ padding: "40px", boxShadow: "10px 10px 10px 10px  #e0aaff" }}
       >
         <Card>
+        {show && <Alert color="info" isOpen={show} toggle={!show}>
+         {message}
+        </Alert>}
           <br></br>
           <Table
             style={{
@@ -96,9 +114,9 @@ const DynamicTable = (props) => {
                     <td>
                       <Button
                         style={{ border: "none", background: "none" }}
-                        onClick={() => AddModal(enumId, optionValues)}
+                        onClick={() => deleteValues(enumId)}
                       >
-                        <FontAwesomeIcon icon={faEdit} color="#5A189A" />
+                        <FontAwesomeIcon icon={faTrash} color="red" />
                       </Button>
                     </td>
                   </tr>

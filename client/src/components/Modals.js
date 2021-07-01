@@ -40,7 +40,7 @@ const EnumModal = (props) => {
   return (
     <div style={{ backgroundColor: "#F6C6EA" }}>
       <Modal isOpen={showModal} toggle={toggle} style={{ boxShadow: "5px 5px 5px #C77DFF", backgroundColor: "#C77DFF", padding:"0" }} >
-        <ModalBody style={{ backgroundColor: "#F6C6EA" }}>
+        <ModalBody>
           <Table style={{
             background: "#FFFFFF",
             borderSpacing: "0",
@@ -92,7 +92,7 @@ const EnumModal = (props) => {
             <Button onclick={setShow(!show)}>+</Button>
           )}
         </ModalBody>
-        <ModalFooter style={{ backgroundColor: "#F6C6EA" }}>
+        <ModalFooter>
           <Form>
             <Button type="submit"
               style={{ marginRight: "10px" }}

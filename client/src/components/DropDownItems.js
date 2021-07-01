@@ -72,24 +72,23 @@ export const DropdownSelect = ({
   return (
     <>
       <Row className="mb-4">
-        <Col md={4}><h5>Gender</h5></Col>
-        <Col md={8}><Select onChange={() => { return changeGender; }} options={gender}></Select></Col>
+        <Col md={2}><h5>Gender</h5></Col>
+         <Col md={4}><Select onChange={() => { return changeGender; }} options={gender}></Select></Col>
+      
+        <Col md={2}><h5>Employment</h5></Col>
+         <Col md={4}><Select onChange={() => { return changeEmployment; }} options={employment}></Select></Col>
       </Row>
+
       <Row className="mb-4">
-        <Col md={4}><h5>Employment</h5></Col>
-        <Col md={8}><Select onChange={() => { return changeEmployment; }} options={employment}></Select></Col>
+        <Col md={2}><h5>Loan Type</h5></Col>
+        <Col md={4}><Select onChange={() => { return changeLoanType; }} options={loanType}></Select></Col>
+        <Col md={2}><h5>Education</h5></Col>
+        <Col md={4}><Select onChange={() => { return changeEducation; }} options={education}></Select></Col>
       </Row>
+
       <Row className="mb-4">
-        <Col md={4}><h5>Loan Type</h5></Col>
-        <Col md={8}><Select onChange={() => { return changeLoanType; }} options={loanType}></Select></Col>
-      </Row>
-      <Row className="mb-4">
-        <Col md={4}><h5>Education</h5></Col>
-        <Col md={8}><Select onChange={() => { return changeEducation; }} options={education}></Select></Col>
-      </Row>
-      <Row className="mb-4">
-        <Col md={4}><h5>Martial Status</h5></Col>
-        <Col md={8}><Select onChange={() => { return changeMarital; }} options={marital}></Select></Col>
+        <Col md={2}><h5>Martial Status</h5></Col>
+        <Col md={4}><Select onChange={() => { return changeMarital; }} options={marital}></Select></Col>
 
       </Row>
     </>

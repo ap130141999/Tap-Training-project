@@ -26,12 +26,15 @@ const FormPage = () => {
   const [education, setEducation] = useState("");
   const [marital, setMarital] = useState("");
   const [loanType, setLoanType] = useState("");
+  const [error, setError] = useState(false);
 
   const [alert, setAlert] = useState(false);
   const submitData = async () => {
     const isValid = validateData();
+    console.log(isValid);
     if (isValid) {
       setAlert(true);
+      setError(false);
       let bodyPayload = {
         firstName: firstName,
         lastName: lastName,
@@ -54,15 +57,7 @@ const FormPage = () => {
       );
 
     } else {
-      // <Modal isOpen={alert} toggle={toggle} style={{
-      //   backgroundColor: "#ECECEC",
-      //   boxShadow: "5px 5px 5px 5px lightgrey"
-      // }} >
-      //   <ModalBody>
-      //     <h6>Data added successfully</h6>
-      //     <Button color="success" onClick={toggle}>Close</Button>
-      //   </ModalBody>
-      // </Modal>
+     setError(true);
       console.log("fill all inputs")
     }
 
@@ -71,22 +66,23 @@ const FormPage = () => {
   const toggle = () => setAlert(!alert);
 
   const validateData = () => {
-    const valid = true;
-    valid = !isEmpty(firstName);
-    valid = !isEmpty(lastName);
-    valid = !isEmpty(middleName);
-    valid = !isEmpty(phone);
-    valid = !isEmpty(country);
-    valid = !isEmpty(loan);
-    valid = !isEmpty(gender);
-    valid = !isEmpty(employment);
-    valid = !isEmpty(education);
-    valid = !isEmpty(marital);
-    valid = !isEmpty(loanType);
-    valid = !isEmpty(aadhar);
-    valid = !isEmpty(account);
-    return valid
-  }
+    let valid = true;
+    return(
+    valid = !isEmpty(firstName),
+    valid = !isEmpty(lastName),
+    valid = !isEmpty(middleName),
+    valid = !isEmpty(phone),
+    valid = !isEmpty(country),
+    valid = !isEmpty(loan),
+    valid = !isEmpty(gender),
+    valid = !isEmpty(employment),
+    valid = !isEmpty(education),
+    valid = !isEmpty(marital),
+    valid = !isEmpty(loanType),
+    valid = !isEmpty(aadhar),
+    valid = !isEmpty(account)
+    // return valid
+    )}
   const getFirstName = (value) => {
     console.log(value);
     setFirstName(value);
@@ -160,7 +156,9 @@ const FormPage = () => {
             padding: "40px",
             boxShadow: "5px 5px 5px 5px lightgrey",
           }}
-        >
+        >{
+          error &&  <Alert color="danger">Fill All The Inputs</Alert>
+        }
           <br></br>
           <InputFields
             sendFirstName={getFirstName}
@@ -172,9 +170,7 @@ const FormPage = () => {
             sendAadhar={getAadhar}
             sendAccount={getAccount}
           />
-
-          <Row>
-            <Col md="6">
+          
               <DropdownSelect
                 optionGender={getGender}
                 optionEmployment={getEmployment}
@@ -182,8 +178,8 @@ const FormPage = () => {
                 optionMarital={getMarital}
                 optionEducation={getEducation}
               />
-            </Col>
-          </Row>
+
+          
           <Row>
             <Col md="12">
           <div className="d-flex justify-content-end">

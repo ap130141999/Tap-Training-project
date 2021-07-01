@@ -6,7 +6,7 @@ const controller = require("../Controllers/enumController");
 router.get("/get", controller.findAllEnums);
 router.post("/create", controller.insertEnums);
 router.put("/update", controller.updateEnum);
-router.delete("/delete",controller.deleteEnum);
+router.delete("/delete/:enumId",controller.deleteEnum);
 
 //Route for Form
 router.get("/getDetails", controller.findAllDetails);

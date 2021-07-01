@@ -58,15 +58,13 @@ const findAllDetails = async (req, res) => {
 
 // delete the full enum object
 const deleteEnum = async (req, res) => {
-  const { enumId, optionValues } = req.body;
-  const { label, value } = optionValues;
+  const { enumId = "" } = req.params;
   const collection = client.db(dbName).collection(collectionName);
-  const response = await collection.find({ enumId })
-  let dbResponse = {};
-  if (response) {
-    dbResponse = await collection.deleteOne({ enumId }, { $push: { optionValues: { $each: optionValues } } });
-    res.send(JSON.stringify(dbResponse.result));
-  }
+  
+
+    let dbResponse = await collection.deleteOne({ enumId });
+      res.status(200).json({ message: `Deleted enumId ${enumId}`});
+    
 }
 // PUT all the details to Database
 const insertData = async (req, res) => {
