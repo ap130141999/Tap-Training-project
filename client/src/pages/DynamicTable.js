@@ -7,7 +7,6 @@ import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 import EnumModal from "../components/Modals.js";
 import Header from "../components/Header.js";
-
 import "../index.css";
 
 const DynamicTable = (props) => {
@@ -18,7 +17,6 @@ const DynamicTable = (props) => {
   const [showModal, setShowModal] = useState(false);
   const [tableId, setTabelId] = useState("");
   const [value, setValue] = useState([]);
-  const [closeModal, setCloseModal] = useState();
   const [message, setMessage] = useState("");
   const [show, setShow] = useState(false);
 
