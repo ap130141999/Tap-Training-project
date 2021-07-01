@@ -47,6 +47,7 @@ export const DropdownSelect = ({
   const changeGender = (event) => {
     setCurrentGender(event.value);
     setCurrentGender(event.label);
+    console.log(event.label);
     optionGender(event.label);
   };
   const changeEmployment = (event) => {
@@ -72,24 +73,43 @@ export const DropdownSelect = ({
   return (
     <>
       <Row className="mb-4">
-        <Col md={2}><h5>Gender</h5></Col>
-         <Col md={4}><Select onChange={() => { return changeGender; }} options={gender}></Select></Col>
-      
-        <Col md={2}><h5>Employment</h5></Col>
-         <Col md={4}><Select onChange={() => { return changeEmployment; }} options={employment}></Select></Col>
+        <Col md={2}>
+          <h5>Gender</h5>
+        </Col>
+        <Col md={4}>
+          <Select onChange={changeGender} options={gender}></Select>
+        </Col>
+
+        <Col md={2}>
+          <h5>Employment</h5>
+        </Col>
+        <Col md={4}>
+          <Select onChange={changeEmployment} options={employment}></Select>
+        </Col>
       </Row>
 
       <Row className="mb-4">
-        <Col md={2}><h5>Loan Type</h5></Col>
-        <Col md={4}><Select onChange={() => { return changeLoanType; }} options={loanType}></Select></Col>
-        <Col md={2}><h5>Education</h5></Col>
-        <Col md={4}><Select onChange={() => { return changeEducation; }} options={education}></Select></Col>
+        <Col md={2}>
+          <h5>Loan Type</h5>
+        </Col>
+        <Col md={4}>
+          <Select onChange={changeLoanType} options={loanType}></Select>
+        </Col>
+        <Col md={2}>
+          <h5>Education</h5>
+        </Col>
+        <Col md={4}>
+          <Select onChange={changeEducation} options={education}></Select>
+        </Col>
       </Row>
 
       <Row className="mb-4">
-        <Col md={2}><h5>Martial Status</h5></Col>
-        <Col md={4}><Select onChange={() => { return changeMarital; }} options={marital}></Select></Col>
-
+        <Col md={2}>
+          <h5>Martial Status</h5>
+        </Col>
+        <Col md={4}>
+          <Select onChange={changeMarital} options={marital}></Select>
+        </Col>
       </Row>
     </>
   );
