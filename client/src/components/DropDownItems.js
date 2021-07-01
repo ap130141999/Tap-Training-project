@@ -56,6 +56,7 @@ export const DropdownSelect = ({
     optionEmployment(event.label);
   };
   // added change loantype
+  //comments
   const changeLoanType = (event) => {
     setCurrentLoanType(event.value);
     setCurrentLoanType(event.label);
