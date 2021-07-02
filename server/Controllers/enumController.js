@@ -60,18 +60,16 @@ const findAllDetails = async (req, res) => {
 const deleteEnum = async (req, res) => {
   const { enumId = "" } = req.params;
   const collection = client.db(dbName).collection(collectionName);
-  
 
-    let dbResponse = await collection.deleteOne({ enumId });
-      res.status(200).json({ message: `Deleted enumId ${enumId}`});
-    
-}
+  let dbResponse = await collection.deleteOne({ enumId });
+  res.status(200).json({ message: `Deleted enumId ${enumId}` });
+};
 // PUT all the details to Database
 const insertData = async (req, res) => {
   const {
-    firstname,
-    lastname,
-    middlename,
+    firstName,
+    lastName,
+    middleName,
     phone,
     country,
     loan,
@@ -83,11 +81,11 @@ const insertData = async (req, res) => {
     account,
     aadhar,
   } = req.body;
-  const collection = client.db("details_db").collection("details");
+  const collection = client.db("customer_details").collection("form_details");
   const data = {
-    firstname: firstname,
-    lastname: lastname,
-    middlename: middlename,
+    firstName: firstName,
+    lastName: lastName,
+    middleName: middleName,
     phone: phone,
     country: country,
     loan: loan,
@@ -113,5 +111,5 @@ module.exports = {
   updateEnum,
   findAllDetails,
   insertData,
-  deleteEnum
+  deleteEnum,
 };

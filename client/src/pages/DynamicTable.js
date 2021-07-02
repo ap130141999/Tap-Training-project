@@ -56,7 +56,6 @@ const DynamicTable = (props) => {
   };
   const dele = async (enumId) =>
     await axios.delete(`http://localhost:3001/enum/delete/${enumId}`, {});
-
   return (
     <>
       <Header />

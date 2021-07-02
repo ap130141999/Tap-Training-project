@@ -1,16 +1,24 @@
 import React from "react";
 import "../App.css";
 import axios from "axios";
-import { Container, Col, Row, Card, CardBody, Alert, Button, Modal, ModalBody, ModalHeader } from "reactstrap";
-import { useState } from "react";
 import {
-  DropdownSelect,
-} from "../components/DropDownItems";
+  Container,
+  Col,
+  Row,
+  Card,
+  CardBody,
+  Alert,
+  Button,
+  Modal,
+  ModalBody,
+  ModalHeader,
+} from "reactstrap";
+import { useState } from "react";
+import { DropdownSelect } from "../components/DropDownItems";
 import { isEmpty } from "lodash";
 import InputFields from "../components/InputFields.js";
 import FormButtons from "../components/FormButtons.js";
 import Header from "../components/Header.js";
-
 
 const FormPage = () => {
   const [firstName, setFirstName] = useState("");
@@ -50,17 +58,15 @@ const FormPage = () => {
         aadhar: aadhar,
         account: account,
       };
-      console.log(bodyPayload, "hi");
+      console.log(bodyPayload);
       const response = await axios.post(
         `http://localhost:3001/enum/addDetails`,
         bodyPayload
       );
-
     } else {
-     setError(true);
-      console.log("fill all inputs")
+      setError(true);
+      console.log("fill all inputs");
     }
-
   };
 
   const toggle = () => setAlert(!alert);
@@ -109,7 +115,7 @@ const FormPage = () => {
   };
 
   const getGender = (label) => {
-    console.log("Hi option here", label);
+    console.log(label);
     setGender(label);
   };
 
@@ -140,13 +146,24 @@ const FormPage = () => {
     <main>
       <Header />
       <Container className="mb-4">
-        <Card className="text-center " style={{ boxShadow: "5px 5px 5px grey", backgroundColor: "#9d4edd", color: "white", padding: "10px" }}>
-
-          <h5 style={{
-            textAlign: "center",
+        <Card
+          className="text-center "
+          style={{
+            boxShadow: "5px 5px 5px grey",
+            backgroundColor: "#9d4edd",
             color: "white",
-          }}> LOAN APPLICATION FORM </h5>
-
+            padding: "10px",
+          }}
+        >
+          <h5
+            style={{
+              textAlign: "center",
+              color: "white",
+            }}
+          >
+            {" "}
+            LOAN APPLICATION FORM{" "}
+          </h5>
         </Card>
       </Container>
       <Container>
@@ -156,9 +173,8 @@ const FormPage = () => {
             padding: "40px",
             boxShadow: "5px 5px 5px 5px lightgrey",
           }}
-        >{
-          error &&  <Alert color="danger">Fill All The Inputs</Alert>
-        }
+        >
+          {error && <Alert color="danger">Fill All The Inputs</Alert>}
           <br></br>
           <InputFields
             sendFirstName={getFirstName}
@@ -170,22 +186,27 @@ const FormPage = () => {
             sendAadhar={getAadhar}
             sendAccount={getAccount}
           />
-          
-              <DropdownSelect
-                optionGender={getGender}
-                optionEmployment={getEmployment}
-                optionLoanType={getLoanType}
-                optionMarital={getMarital}
-                optionEducation={getEducation}
-              />
 
-          
+          <DropdownSelect
+            optionGender={getGender}
+            optionEmployment={getEmployment}
+            optionLoanType={getLoanType}
+            optionMarital={getMarital}
+            optionEducation={getEducation}
+          />
+
           <Row>
             <Col md="12">
-          <div className="d-flex justify-content-end">
-          <Button  style={{width:"20%"}} color="success" onClick={submitData}>submit</Button>
-          </div>
-          </Col>
+              <div className="d-flex justify-content-end">
+                <Button
+                  style={{ width: "20%" }}
+                  color="success"
+                  onClick={submitData}
+                >
+                  submit
+                </Button>
+              </div>
+            </Col>
           </Row>
           {alert && <Modal isOpen={alert} toggle={toggle} style={{
             backgroundColor: "#ECECEC",
@@ -203,7 +224,6 @@ const FormPage = () => {
 };
 
 export default FormPage;
-
 
 // <Modal isOpen={alert}>
 //             Data added Succes</Modal>
