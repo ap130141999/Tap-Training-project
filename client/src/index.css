@@ -57,3 +57,7 @@ tr th {
     margin: 20px;
   }
 }
+.required:after {
+  content:" *";
+  color: red;
+}

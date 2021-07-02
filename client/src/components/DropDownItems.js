@@ -74,14 +74,14 @@ export const DropdownSelect = ({
     <>
       <Row className="mb-4">
         <Col md={2}>
-          <h5>Gender</h5>
+          <h5 className="required">Gender</h5>
         </Col>
         <Col md={4}>
           <Select onChange={changeGender} options={gender}></Select>
         </Col>
 
         <Col md={2}>
-          <h5>Employment</h5>
+          <h5 className="required">Employment</h5>
         </Col>
         <Col md={4}>
           <Select onChange={changeEmployment} options={employment}></Select>
@@ -90,13 +90,13 @@ export const DropdownSelect = ({
 
       <Row className="mb-4">
         <Col md={2}>
-          <h5>Loan Type</h5>
+          <h5 className="required">Loan Type</h5>
         </Col>
         <Col md={4}>
           <Select onChange={changeLoanType} options={loanType}></Select>
         </Col>
         <Col md={2}>
-          <h5>Education</h5>
+          <h5 className="required">Education</h5>
         </Col>
         <Col md={4}>
           <Select onChange={changeEducation} options={education}></Select>
@@ -105,7 +105,7 @@ export const DropdownSelect = ({
 
       <Row className="mb-4">
         <Col md={2}>
-          <h5>Martial Status</h5>
+          <h5 className="required">Martial Status</h5>
         </Col>
         <Col md={4}>
           <Select onChange={changeMarital} options={marital}></Select>

@@ -18,7 +18,7 @@ const InputFields = (props) => {
       <div>
         <FormGroup row>
           <Label for="FirstName" md={2}>
-            <h5> First Name </h5>
+            <h5 className="required"> First Name </h5>
           </Label>
           <Col md={4}>
             <Input
@@ -52,7 +52,7 @@ const InputFields = (props) => {
       <br></br>
       <FormGroup row>
         <Label for="Last Name" md={2}>
-          <h5> Last Name</h5>
+          <h5 className="required"> Last Name</h5>
         </Label>
         <Col md={4} className="mb-4">
           <Input
@@ -68,7 +68,7 @@ const InputFields = (props) => {
 
         <br></br>
         <Label for="PhoneNo" md={2}>
-          <h5> Phone No</h5>
+          <h5 className="required"> Phone No</h5>
         </Label>
         <Col md={4}>
           <Input
@@ -85,7 +85,7 @@ const InputFields = (props) => {
 
       <FormGroup row>
         <Label for="Country" md={2}>
-          <h5> Country</h5>
+          <h5 className="required"> Country</h5>
         </Label>
         <Col md={4}>
           <Input
@@ -101,7 +101,7 @@ const InputFields = (props) => {
         {/* </FormGroup> */}
         <br></br>
         <Label for=" Date" md={2}>
-          <h5> Account</h5>
+          <h5 className="required"> Account</h5>
         </Label>
         <Col md={4}>
           <Input
@@ -118,7 +118,7 @@ const InputFields = (props) => {
       <br></br>
       <FormGroup row>
         <Label for="Aadhar number" md={2}>
-          <h5> Aadhar Number</h5>
+          <h5 className="required"> Aadhar Number</h5>
         </Label>
         <Col md={4}>
           <Input
@@ -132,7 +132,7 @@ const InputFields = (props) => {
         </Col>
         {/* <FormGroup row> */}
         <Label for="Loan Amount" md={2}>
-          <h5> Loan Amount</h5>
+          <h5 className="required"> Loan Amount</h5>
         </Label>
         <Col md={4}>
           <Input

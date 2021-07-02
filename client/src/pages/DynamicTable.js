@@ -73,16 +73,19 @@ const DynamicTable = (props) => {
               color: "white",
             }}
           >
-            ENUM TABLE
+            ENUM CONFIGURATION
           </h5>
         </Card>
       </Container>
       <Container
-        style={{ padding: "40px", boxShadow: "10px 10px 10px 10px  #e0aaff" }}
+        style={{ padding: "40px", borderRadius: "20px",
+        boxShadow: "0 4px 8px 0 rgba(0,0,0,0.5)" }}
       >
-        <Button style={{ color: "success" }} onClick={AddEnumModal}>
+        <div className="d-flex justify-content-end">
+        <Button className="mb-2" color="success" onClick={AddEnumModal}>
           Add Enum
         </Button>
+        </div>
         <Card>
           {show && (
             <Alert color="info" isOpen={show} toggle={!show}>

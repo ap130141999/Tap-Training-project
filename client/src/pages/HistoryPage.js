@@ -47,9 +47,9 @@ const HistoryPage = () => {
                   <div className="text-center">
                   <FontAwesomeIcon icon={ faAddressCard} color="#5a189a" style={{width: "20%", height: "20%"}}/>
                   </div>
-                    <CardTitle tag="h2">{data.firstname}</CardTitle>
-                    <CardText> Middlename : {data.middlename} </CardText>
-                    <CardText> LastName : {data.lastname} </CardText>
+                    <CardTitle tag="h2">{data.firstName}</CardTitle>
+                    {data.middleName && <CardText> Middlename : {data.middleName} </CardText>}
+                    <CardText> LastName : {data.lastName} </CardText>
                     <CardText> Phone : {data.phone} </CardText>
                     <CardText>Country : {data.country} </CardText>
                     <CardText> Loan : {data.loan} </CardText>

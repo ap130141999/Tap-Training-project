@@ -212,9 +212,9 @@ const FormPage = () => {
             backgroundColor: "#ECECEC",
                   boxShadow: "0 4px 8px 0 grey"
           }} >
-            <ModalBody>
-              <h6 style={{color: "#9d4edd", }} ><b>Data added successfully</b></h6>
-              <Button style={{backgroundColor: "#9d4edd", color:"white"}} onClick={() => { toggle(); window.location.reload(); }} >Close</Button>
+            <ModalBody >
+              <h5 className="d-flex justify-content-center mb-3" style={{color: "#9d4edd"}}><b>Data added successfully</b></h5>
+              <div className="d-flex justify-content-center"><Button style={{backgroundColor: "#9d4edd", color:"white"}} onClick={() => { toggle(); window.location.reload(); }} >Close</Button></div>
             </ModalBody>
           </Modal>}
         </Card>
