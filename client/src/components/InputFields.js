@@ -14,7 +14,7 @@ const InputFields = (props) => {
   } = props;
 
   return (
-    <Form data-toggle="validator" >
+    <Form>
       <div>
         <FormGroup row>
           <Label for="FirstName" md={2}>

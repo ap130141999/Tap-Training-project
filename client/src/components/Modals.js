@@ -39,7 +39,12 @@ const EnumModal = (props) => {
 
   return (
     <div style={{ backgroundColor: "#F6C6EA" }}>
-      <Modal isOpen={showModal} toggle={toggle} style={{ boxShadow: "5px 5px 5px #C77DFF", backgroundColor: "#C77DFF", padding:"0" }} >
+      <Modal isOpen={showModal} toggle={toggle} style={{ borderRadius: "20px",
+                  boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)" }} >
+        <ModalHeader className="mx-auto">
+        <span style={{marginRight: "325px",color: "#5A189A"}}><b>Add Enum</b></span>
+        <Button style={{ border: "none", background: "none"}} onClick={() => props.modelHandle(!showModal)}><FontAwesomeIcon icon={faTimes} color="#5a189a" /></Button>
+        </ModalHeader>
         <ModalBody>
           <Table style={{
             background: "#FFFFFF",
@@ -48,7 +53,8 @@ const EnumModal = (props) => {
             <thead style={{ backgroundColor: "#5A189A", color: "white" }}>
               <tr style={{ backgroundColor: "#5A189A", color: "white" }}>
                 <th>EnumID</th>
-                <th>Available Value</th>
+                <th>Option Value</th>
+                <th>Option Label</th>
               </tr >
             </thead>
             <tbody>
@@ -64,9 +70,34 @@ const EnumModal = (props) => {
                         }}
                         defaultValue={ele.value}
                         disabled
-
                       />
                     </Col>
+                    
+                    {/* <Col md={2}>
+                      <Button
+                        style={{ border: "2px solid #5a189a", background: "none" }}
+
+                      >
+                        <FontAwesomeIcon icon={faTimes} color="#5a189a" />
+                      </Button>
+                    </Col> */}
+                  </Row>
+                ))}
+              </td>
+               {/* <td>
+                {oV.map((ele) => (
+                  <Row>
+                    <Col md={10}>
+                      <Input
+                        key={ele.label}
+                        onclick={(e) => {
+                          dropChange(e, ele.label);
+                        }}
+                        defaultValue={ele.label}
+                        disabled
+                      />
+                    </Col>
+                    
                     <Col md={2}>
                       <Button
                         style={{ border: "2px solid #5a189a", background: "none" }}
@@ -77,12 +108,12 @@ const EnumModal = (props) => {
                     </Col>
                   </Row>
                 ))}
-              </td>
+              </td> */}
             </tbody>
           </Table>
           {show ? (
-            <Col style={{ backgroundColor: "#5A189A", color: "white" }}>
-              <h6>Add Dropdown value</h6>
+            <Col style={{ backgroundColor: "#5A189A", color: "white" ,marginBottom: "15px"}}>
+              <h6>Add Options</h6>
               <Input
                 value={input}
                 onChange={(event) => setInput(event.target.value)}
@@ -90,7 +121,18 @@ const EnumModal = (props) => {
             </Col>
           ) : (
             <Button onclick={setShow(!show)}>+</Button>
-          )}
+          )}  
+           {/* {show ? (
+            <Col style={{ backgroundColor: "#5A189A", color: "white" ,marginBottom: "15px"}}>
+              <h6>Add Options</h6>
+              <Input
+                label={input}
+                onChange={(event) => setInput(event.target.label)}
+              />
+            </Col>
+          ) : (
+            <Button onclick={setShow(!show)}>+</Button>
+          )}   */}
         </ModalBody>
         <ModalFooter>
           <Form>

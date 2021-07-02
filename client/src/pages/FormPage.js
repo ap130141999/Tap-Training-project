@@ -70,7 +70,7 @@ const FormPage = () => {
     return(
     valid = !isEmpty(firstName),
     valid = !isEmpty(lastName),
-    valid = !isEmpty(middleName),
+    // valid = !isEmpty(middleName),
     valid = !isEmpty(phone),
     valid = !isEmpty(country),
     valid = !isEmpty(loan),
@@ -189,11 +189,11 @@ const FormPage = () => {
           </Row>
           {alert && <Modal isOpen={alert} toggle={toggle} style={{
             backgroundColor: "#ECECEC",
-            boxShadow: "5px 5px 5px 5px lightgrey"
+                  boxShadow: "0 4px 8px 0 grey"
           }} >
             <ModalBody>
-              <h6>Data added successfully</h6>
-              <Button color="success" onClick={() => { toggle(); window.location.reload(); }} >Close</Button>
+              <h6 style={{color: "#9d4edd", }} ><b>Data added successfully</b></h6>
+              <Button style={{backgroundColor: "#9d4edd", color:"white"}} onClick={() => { toggle(); window.location.reload(); }} >Close</Button>
             </ModalBody>
           </Modal>}
         </Card>

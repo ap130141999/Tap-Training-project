@@ -3,7 +3,7 @@ const express = require("express");
 require("dotenv").config();
 
 const dbName = "credit_guardians";
-const collectionName = "dynamic_enum";
+const collectionName = "enum_config";
 const app = express();
 let client = null;
 
@@ -51,7 +51,7 @@ const connectToDatabase = async () => {
 // API FOR FORM SUBMISSION AND HISTORY PAGE
 //GET all the details to history page
 const findAllDetails = async (req, res) => {
-  const collection = client.db("details_db").collection("details");
+  const collection = client.db("customer_details").collection("form_details");
   const response = await collection.find({}).toArray();
   res.send(JSON.stringify(response));
 };
